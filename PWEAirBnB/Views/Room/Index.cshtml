@@ -1,0 +1,14 @@
+﻿@model PWEAirBnB.ViewModels.RoomVM
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<h2>Hello World!</h2>
+<p>My Room is: <strong>@Model.Name</strong></p>
+<p>My room description is: <strong>@Model.Description</strong></p>
+<p>My room number is: <strong>@Model.RoomNumber</strong></p>
+
+<button type="button" class="btn-default">@Html.ActionLink("Create a new room", "Create", "Room")</button>
+

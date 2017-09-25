@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PWEAirBnB.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -26,5 +27,14 @@ namespace PWEAirBnB.Controllers
 
             return View();
         }
+
+        //public  ActionResult Test()
+        //{
+        //    RoomVM myRoomVM = new RoomVM();
+        //    myRoomVM.Name = "My Room";
+        //    myRoomVM.Description = "This is my description";
+        //    myRoomVM.RoomNumber = 10;
+        //    return View(myRoomVM);
+        //}
     }
 }
