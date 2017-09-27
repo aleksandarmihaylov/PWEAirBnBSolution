@@ -1,16 +1,24 @@
-﻿
+﻿@model PWEAirBnB.ViewModels.RoomVM
+
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
-
-<form>
-    First name:<br>
-    <input type="text" name="name"><br>
-    Last name:<br>
-    <input type="text" description="description">
-    <br>
-    <button class="btn btn-default">Create a new room!</button>
+<h2>Create new room</h2>
+<a href="/Room/" class="btn btn-primary btn-xs">Back</a><br />
+<form action="/Room/Create" method="post" class="form-horizontal">
+    <div class="form-group">
+        <label>Room Name</label>
+        <input type="text" name="Name" required class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Room Description</label>
+        <textarea name="Description" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <label>Room Number</label>
+        <input type="number" name="RoomNumber" class="form-control" />
+    </div>
+    <input type="submit" name="SaveButton" class="btn btn-success" value="Save" />
 </form>

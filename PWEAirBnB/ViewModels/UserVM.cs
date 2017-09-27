@@ -5,13 +5,12 @@ using System.Web;
 
 namespace PWEAirBnB.ViewModels
 {
-    public class RoomVM
+    public class UserVM
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Description { get; set; }
-        public int RoomNumber { get; set; }
+        public string Phone { get; set; }
 
-        public List<RoomVM> Rooms { get; set; }
+        public List<UserVM> Users { get; set; }
     }
 }

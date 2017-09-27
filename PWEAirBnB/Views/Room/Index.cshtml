@@ -4,11 +4,38 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
-<h2>Hello World!</h2>
+<h2>All Rooms</h2>
+@*<h2>Hello World!</h2>
 <p>My Room is: <strong>@Model.Name</strong></p>
 <p>My room description is: <strong>@Model.Description</strong></p>
-<p>My room number is: <strong>@Model.RoomNumber</strong></p>
+<p>My room number is: <strong>@Model.RoomNumber</strong></p>*@
 
-<button type="button" class="btn-default">@Html.ActionLink("Create a new room", "Create", "Room")</button>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>RoomNumber</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var roomvm in Model.Rooms)
+        {
+            <tr>
+                <td>@roomvm.Id</td>
+                <td>@roomvm.Name</td>
+                <td>@roomvm.Description</td>
+                <td>@roomvm.RoomNumber</td>
+                <td>
+                    <a href="/Room/Show/@roomvm.Id" class="btn btn-primary btn-xs">Show</a>
+                    <a href="/Room/Edit/@roomvm.Id" class="btn btn-warning btn-xs">Edit</a>
+                    <a href="/Room/Delete/@roomvm.Id" class="btn btn-danger btn-xs" onclick="return confirm('You are about to delete a Room. Are you sure you want to continue?')">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Room/Create" class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-plus"></span> Create a new room</a><br />
 

@@ -1,0 +1,26 @@
+﻿@model PWEAirBnB.ViewModels.RoomVM
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit the room</h2>
+<a href="/Room/" class="btn btn-primary btn-xs">Back</a><br />
+<form action="/Room/Edit" method="post" class="form-horizontal">
+    <input type="hidden" name="Id" value="@Model.Id">
+    <div class="form-group">
+        <label>Room Name</label>
+        <input type="text" name="Name" required class="form-control" value="@Model.Name" />
+    </div>
+    <div class="form-group">
+        <label>Room Description</label>
+        <textarea name="Description" class="form-control">@Model.Description</textarea>
+    </div>
+    <div class="form-group">
+        <label>Room Number</label>
+        <input type="number" name="RoomNumber" class="form-control" value="@Model.RoomNumber"/>
+    </div>
+    <input type="submit" name="SaveButton" class="btn btn-success" value="Update" />
+</form>
+

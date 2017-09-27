@@ -1,0 +1,18 @@
+﻿@model PWEAirBnB.ViewModels.RoomVM
+
+@{
+    ViewBag.Title = "Show";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Show room</h2>
+<a href="/Room/" class="btn btn-primary btn-xs">Back</a><br />
+<label>Room ID</label>
+<div class="well well-xs">@Model.Id</div>
+<label>Room Name</label>
+<div class="well well-xs">@Model.Name</div>
+<label>Room Description</label>
+<div class="well well-xs">@Model.Description</div>
+<label>Room Number</label>
+<div class="well well-xs">@Model.RoomNumber</div>
+<input type="submit" name="SaveButton" class="btn btn-success" value="Save" />
