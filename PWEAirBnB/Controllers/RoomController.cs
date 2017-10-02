@@ -28,6 +28,7 @@ namespace PWEAirBnB.Controllers
                 roomvm.Name = room.Name;
                 roomvm.Description = room.Description;
                 roomvm.RoomNumber = room.RoomNumber;
+                roomvm.IsOccupied = false;
                 //add it to the list
                 roomVMs.Add(roomvm);
             }

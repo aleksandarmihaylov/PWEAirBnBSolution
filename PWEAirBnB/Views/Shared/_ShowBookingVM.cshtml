@@ -1,0 +1,9 @@
+﻿@model PWEAirBnB.ViewModels.BookingVM
+    @*displaying a single booking*@
+    <div>
+        <span>Start: </span>@Model.StartTime.ToLongDateString()<br />
+        <span>End: </span>@Model.EndTime.ToLongDateString()<br />
+        <span>Room: </span>@Model.RoomId<br />
+        <hr />
+    </div>
+

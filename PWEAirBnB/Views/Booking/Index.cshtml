@@ -1,0 +1,60 @@
+﻿@model PWEAirBnB.ViewModels.BookingVM
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Book a room</h2>
+
+<div>
+    <form action="/Booking/Index" method="post" class="form-horizontal">
+        <div class="form-group">
+            <label>Select Room</label>
+            <select name="RoomId">
+                <option value="0">Please select a room</option>
+                @foreach(var room in Model.Rooms)
+                {
+                    <option value="@room.Id">@room.Name (@room.RoomNumber)</option>
+                }
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Start Date</label>
+            <input type="date" name="StartTime" />
+        </div>
+        <div class="form-group">
+            <label>Emd Date</label>
+            <input type="date" name="EndTime" />
+        </div>
+        <input type="submit" class="btn btn-success" value="Save Booking" />
+    </form>
+
+    <hr/>
+
+    <h2>Bookings</h2>
+
+    @foreach (var bookingVM in Model.Bookings)
+    {
+        @Html.Partial("_ShowBookingVM", bookingVM);
+    }
+    @*<table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Room id</th>
+                <th>Start date</th>
+                <th>End date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bookingVM in Model.Bookings)
+            {
+                <tr>
+                    <td>@bookingVM.RoomId</td>
+                    <td>@bookingVM.StartTime</td>
+                    <td>@bookingVM.EndTime</td>
+                </tr>
+            }
+        </tbody>
+    </table>*@
+</div>
+

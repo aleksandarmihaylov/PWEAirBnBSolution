@@ -10,14 +10,13 @@ namespace PWEAirBnB.DAL
     /// <summary>
     /// Responsible for communicating with the database for basic CRUD
     /// </summary>
-    public class RoomRepository
+    public class RoomRepository : BaseRepository
     {
         public void SaveRoom(Room room)
         {
             //save it to the database
             //1. Create and configurate the connection
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Server=DESKTOP-PVFC580\\SQLEXPRESS;Database=PWEAirBNB;Integrated Security=SSPI;";
+            SqlConnection connection = CreateConnection();
 
             try
             {
@@ -44,8 +43,7 @@ namespace PWEAirBnB.DAL
         {
             //create a result variable of type list
             List<Room> result = new List<Room>();
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Server=DESKTOP-PVFC580\\SQLEXPRESS;Database=PWEAirBNB;Integrated Security=SSPI;";
+            SqlConnection connection = CreateConnection();
             try
             {
                 connection.Open();
@@ -85,8 +83,7 @@ namespace PWEAirBnB.DAL
         {
             //update the value to the database
             //1. Create and configurate the connection
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Server=DESKTOP-PVFC580\\SQLEXPRESS;Database=PWEAirBNB;Integrated Security=SSPI;";
+            SqlConnection connection = CreateConnection();
             try
             {
                 connection.Open();
@@ -110,8 +107,7 @@ namespace PWEAirBnB.DAL
         public Room LoadRoom(int id)
         {
             Room result = new Room();
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Server=DESKTOP-PVFC580\\SQLEXPRESS;Database=PWEAirBNB;Integrated Security=SSPI;";
+            SqlConnection connection = CreateConnection();
             try
             {
                 connection.Open();
@@ -147,8 +143,7 @@ namespace PWEAirBnB.DAL
         {
             //delete the room from the database
             //1. Create and configurate the connection
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = "Server=DESKTOP-PVFC580\\SQLEXPRESS;Database=PWEAirBNB;Integrated Security=SSPI;";
+            SqlConnection connection = CreateConnection();
             try
             {
                 connection.Open();
